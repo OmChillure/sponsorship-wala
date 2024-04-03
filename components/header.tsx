@@ -12,29 +12,31 @@ const SiteHeader = () => {
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex justify-between h-16 max-w-screen-2xl items-center">
         <Link href="/">
-          <h1 className="hidden text-lg mr-4  font-bold sm:inline-block">
+          <h1 className=" text-lg mr-4  font-bold sm:inline-block">
             SponsorshipWala
           </h1>
         </Link>
-        <div className="flex  items-center gap-4 text-sm lg:gap-6">
-          <Link
-            className="font-bold text-base transition-colors hover:text-foreground/80 text-foreground/60"
-            href="/"
-          >
-            About
-          </Link>
-          <Link
-            className="font-bold text-base transition-colors hover:text-foreground/80 text-foreground/60"
-            href="/"
-          >
-            Explore
-          </Link>
-          <Link
-            className="font-bold text-base transition-colors hover:text-foreground/80 text-foreground/60"
-            href="/"
-          >
-            Contact Us
-          </Link>
+        <div className="flex items-center gap-4">
+          <div className="lg:flex md:hidden items-center gap-4">
+            <Link
+              className="font-bold text-base transition-colors hover:text-foreground/80 text-foreground/60"
+              href="/"
+            >
+              About
+            </Link>
+            <Link
+              className="font-bold text-base transition-colors hover:text-foreground/80 text-foreground/60"
+              href="/"
+            >
+              Explore
+            </Link>
+            <Link
+              className="font-bold text-base transition-colors hover:text-foreground/80 text-foreground/60"
+              href="/"
+            >
+              Contact Us
+            </Link>
+          </div>
           {isSignedIn ? (
             <UserButton afterSignOutUrl="/" />
           ) : (
@@ -49,11 +51,13 @@ const SiteHeader = () => {
               </SignInButton>
             </div>
           )}
-          <Button variant="ghost" size="icon">
-            {" "}
-            <Icons.gitHub className="h-5 w-5 fill-current" />
-          </Button>
-          <ModeToggle />
+          <div>
+            <Button variant="ghost" size="icon">
+              {" "}
+              <Icons.gitHub className="h-5 w-5 fill-current" />
+            </Button>
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </nav>
