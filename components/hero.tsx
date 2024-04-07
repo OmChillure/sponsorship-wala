@@ -1,6 +1,7 @@
 import { Announcement } from "./announcements";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -17,7 +18,9 @@ const Hero = () => {
           quia? Cupiditate, totam.
         </p>
         <div className="flex gap-4">
-          <Button size="lg">Get Started</Button>
+          <Button size="lg">
+            <Link href="/event">Get Started</Link>
+          </Button>
           <Button size="lg" variant="ghost">
             Learn More
           </Button>
